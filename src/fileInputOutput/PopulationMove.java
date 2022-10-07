@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class PopulationMove {
     private int fromSido;
@@ -14,7 +15,23 @@ public class PopulationMove {
     public PopulationMove() {
     }
 
-    public PopulationMove(int fromSido, int toSido) {
+    public String sidoString(int sidoNum) throws IOException {
+        ReadLineContext<Mapping> reader = new ReadLineContext<>(new ParseForMapping(), "./mappingInfo.txt");
+
+        List<Mapping> mapList = reader.readByLine();
+
+        for (Mapping mapping : mapList) {
+            if (String.valueOf(sidoNum).equals(mapping.getSidoNum())) {
+                return mapping.getSidoName();
+            }
+        }
+
+        return null;
+    }
+
+    public PopulationMove(int fromSido, int toSido) throws IOException {
+//        this.fromSido = sidoString(fromSido);
+//        this.toSido = sidoString(toSido);
         this.fromSido = fromSido;
         this.toSido = toSido;
     }
@@ -42,5 +59,6 @@ public class PopulationMove {
     public String changeToString() {
         return fromSido + ", " + toSido + "\n";
     }
+
 
 }

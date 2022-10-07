@@ -7,7 +7,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PopulationStatistics {
 
@@ -17,6 +19,9 @@ public class PopulationStatistics {
 
     public String getResult() {
         return result;
+    }
+
+    public PopulationStatistics() {
     }
 
     public PopulationStatistics(String address) throws FileNotFoundException {
@@ -62,5 +67,15 @@ public class PopulationStatistics {
         bw.close();
     }
 
+    public Map<String, Integer> getMoveCntMap(List<PopulationMove> pml) {
+        Map<String, Integer> moveCntMap = new HashMap<>();
 
+        for (PopulationMove populationMove : pml) {
+            String key = populationMove.getFromSido() + "," + populationMove.getToSido();
+            if (moveCntMap.get(key) != null) moveCntMap.put(key, moveCntMap.get(key) + 1);
+            else moveCntMap.put(key, 1);
+        }
+
+        return moveCntMap;
+    }
 }
