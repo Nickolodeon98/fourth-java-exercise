@@ -14,6 +14,10 @@ public class PopulationStatistics {
     private FileReader fr;
     private String result;
 
+    public String getResult() {
+        return result;
+    }
+
     public PopulationStatistics(String address) throws FileNotFoundException {
         this.address = address;
         this.fr = new FileReader(address);
@@ -31,9 +35,9 @@ public class PopulationStatistics {
     public void readByLine() throws IOException {
         BufferedReader reader = new BufferedReader(fr);
 
-        while ((result = reader.readLine()) != null) {
-            System.out.println(result);
-        }
+        result = reader.readLine();
+//        System.out.println(result);
+
         reader.close();
     }
 

@@ -8,6 +8,14 @@ public class PopulationStatisticsMain {
 
         PopulationStatistics populationStatistics = new PopulationStatistics(address);
         populationStatistics.readByLine();
-        populationStatistics.readByLineV2();
+
+        PopulationMove populationMove = new PopulationMove();
+
+        populationMove = populationMove.cntMoves(populationStatistics.getResult());
+
+        System.out.println(populationMove.getFromSido());
+        System.out.println(populationMove.getToSido());
+
+//        populationStatistics.readByLineV2();
     }
 }
