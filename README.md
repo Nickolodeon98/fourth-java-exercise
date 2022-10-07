@@ -26,3 +26,7 @@
 
 ``- sidoString: 시도코드를 시도의 이름으로 바꾸어주는 메서드, mappingInfo.txt에서 정보를 가져와서 변환 작업을 해준다.``
 
+
+#### 구현 결과 정보를 히트맵으로 나타낸 값
+
+![히트맵](https://user-images.githubusercontent.com/113348293/194480789-386b91a7-4f58-489f-bdff-6c0950200b0d.png)
