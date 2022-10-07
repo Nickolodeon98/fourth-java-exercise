@@ -1,11 +1,12 @@
 package fileInputOutput;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PopulationStatisticsMain {
     public static void main(String[] args) throws IOException {
-        String address = "C:\\LikeLion\\2022.10\\2021_인구관련연간자료_20220927_66125.csv";
+        String address = "./from---to.txt";
 
         ReadLineContext populationReader = new ReadLineContext(new ParseForPopulationMove(), address);
         ReadLineContext patientsReader = new ReadLineContext(new ParseForPatients(), address);
@@ -13,19 +14,17 @@ public class PopulationStatisticsMain {
         List<PopulationMove> pmList = populationReader.readByLine();
         List<Patients> ptList = patientsReader.readByLine();
 
-        for (Patients patients : ptList) {
-            System.out.println(patients.getName());
-            System.out.println(patients.getYear());
-        }
-        System.out.println(ptList.size());
+        List<String> stringList = new ArrayList<>();
 
 //        for (PopulationMove populationMove : pmList) {
-//            System.out.println(populationMove.getFromSido());
-//            System.out.println(populationMove.getToSido());
+//            stringList.add(populationMove.changeToString());
 //        }
-//        System.out.println(pmList.size());
 
-        PopulationStatistics populationStatistics = new PopulationStatistics(address);
-        populationStatistics.createAFile("./from_to.txt");
+        for (PopulationMove populationMove : pmList) {
+            System.out.printf("전입: %d, 전출: %d\n", populationMove.getFromSido(), populationMove.getToSido());
+        }
+
+//        PopulationStatistics populationStatistics = new PopulationStatistics(address);
+//        populationStatistics.writeToFile(stringList, "./from---to.txt");
     }
 }

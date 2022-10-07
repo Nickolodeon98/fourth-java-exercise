@@ -3,8 +3,8 @@ package fileInputOutput;
 public class ParseForPopulationMove implements ParseAccordingly<PopulationMove> {
     @Override
     public PopulationMove parse(String str) {
-        String[] info = str.split(",");
+        String[] info = str.split(", ");
 
-        return new PopulationMove(Integer.parseInt(info[6]), Integer.parseInt(info[0]));
+        return new PopulationMove(Integer.parseInt(info[0]), Integer.parseInt(info[1]));
     }
 }

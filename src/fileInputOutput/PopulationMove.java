@@ -1,5 +1,7 @@
 package fileInputOutput;
 
+import org.apache.commons.math3.genetics.Population;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,6 +37,10 @@ public class PopulationMove {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String changeToString() {
+        return fromSido + ", " + toSido + "\n";
     }
 
 }

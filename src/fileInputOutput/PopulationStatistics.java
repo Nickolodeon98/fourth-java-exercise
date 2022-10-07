@@ -51,4 +51,16 @@ public class PopulationStatistics {
             throw new RuntimeException(e);
         }
     }
+
+    public void writeToFile(List<String> strs, String filename) throws IOException {
+        File file = new File(filename);
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+        for (String str : strs) {
+            bw.write(str);
+        }
+        bw.close();
+    }
+
+
 }
