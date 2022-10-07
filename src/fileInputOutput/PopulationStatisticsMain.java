@@ -26,7 +26,7 @@ public class PopulationStatisticsMain {
 
         for (Map.Entry<String, Integer> stringIntegerEntry : moveCntMap.entrySet()) {
             String[] keySplitted = stringIntegerEntry.getKey().split(",");
-            mapToList.add(String.format("[%s, %s, %s]\n", keySplitted[0], keySplitted[1], stringIntegerEntry.getValue()));
+            mapToList.add(String.format("[%s, %s, %s]\n", ps.sidoString(keySplitted[0]), ps.sidoString(keySplitted[1]), stringIntegerEntry.getValue()));
         }
 
         ps.writeToFile(mapToList, "./forAHeatmap.txt");

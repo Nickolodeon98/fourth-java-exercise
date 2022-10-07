@@ -78,4 +78,18 @@ public class PopulationStatistics {
 
         return moveCntMap;
     }
+
+    public String sidoString(String sidoNum) throws IOException {
+        ReadLineContext<Mapping> reader = new ReadLineContext<>(new ParseForMapping(), "./mappingInfo.txt");
+
+        List<Mapping> mapList = reader.readByLine();
+
+        for (Mapping mapping : mapList) {
+            if (sidoNum.equals(mapping.getSidoNum())) {
+                return mapping.getSidoName();
+            }
+        }
+
+        return null;
+    }
 }

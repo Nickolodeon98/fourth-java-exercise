@@ -15,19 +15,7 @@ public class PopulationMove {
     public PopulationMove() {
     }
 
-    public String sidoString(int sidoNum) throws IOException {
-        ReadLineContext<Mapping> reader = new ReadLineContext<>(new ParseForMapping(), "./mappingInfo.txt");
 
-        List<Mapping> mapList = reader.readByLine();
-
-        for (Mapping mapping : mapList) {
-            if (String.valueOf(sidoNum).equals(mapping.getSidoNum())) {
-                return mapping.getSidoName();
-            }
-        }
-
-        return null;
-    }
 
     public PopulationMove(int fromSido, int toSido) throws IOException {
 //        this.fromSido = sidoString(fromSido);
