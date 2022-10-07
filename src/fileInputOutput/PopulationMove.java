@@ -1,5 +1,10 @@
 package fileInputOutput;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class PopulationMove {
     private int fromSido;
     private int toSido;
@@ -20,9 +25,16 @@ public class PopulationMove {
         return fromSido;
     }
 
-    public PopulationMove cntMoves(String line) {
-        String[] info = line.split(",");
-
-        return new PopulationMove(Integer.parseInt(info[0]), Integer.parseInt(info[6]));
+    public void translate() {
+        try {
+            BufferedReader br = Files.newBufferedReader(Paths.get("C:\\LikeLion\\2022.10\\adm_code.xls"));
+            String line = "";
+            while ((line = br.readLine()) !=  null) {
+                String[] convertInfo = line.split("");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 }

@@ -1,12 +1,13 @@
 package fileInputOutput;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import org.apache.commons.math3.genetics.Population;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PopulationStatistics {
 
@@ -32,19 +33,20 @@ public class PopulationStatistics {
         System.out.println(result);
     }
 
-    public void readByLine() throws IOException {
-        BufferedReader reader = new BufferedReader(fr);
-
-        result = reader.readLine();
-//        System.out.println(result);
-
-        reader.close();
-    }
-
     public void readByLineV2() {
         try {
             BufferedReader br = Files.newBufferedReader(Paths.get(address), StandardCharsets.UTF_8);
             while ((result = br.readLine()) != null) System.out.println(result);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void createAFile(String filename) {
+        File file = new File(filename);
+
+        try {
+            file.createNewFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
