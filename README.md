@@ -28,6 +28,6 @@
 
 ![image](https://user-images.githubusercontent.com/113348293/194482470-8976996d-c3dd-48e4-983e-dde5cbbf6707.png)
 
-### 구현 결과 정보를 히트맵으로 나타낸 모습
+### 구현 결과 정보를 히트맵으로 나타낸 모습 (jsfiddle 활용)
 
 ![image](https://user-images.githubusercontent.com/113348293/194483743-5cd51775-384b-4381-8b42-22029767f42f.png)
