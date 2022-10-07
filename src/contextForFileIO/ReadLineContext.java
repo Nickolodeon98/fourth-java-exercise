@@ -1,4 +1,6 @@
-package fileInputOutput;
+package contextForFileIO;
+
+import contextForFileIO.ParseAccordingly;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

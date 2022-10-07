@@ -1,4 +1,6 @@
-package fileInputOutput;
+package contextForFileIO;
+
+import fileInputOutput.Mapping;
 
 public class ParseForMapping implements ParseAccordingly<Mapping>{
 

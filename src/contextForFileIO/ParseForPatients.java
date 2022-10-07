@@ -1,4 +1,6 @@
-package fileInputOutput;
+package contextForFileIO;
+
+import fileInputOutput.Patients;
 
 public class ParseForPatients implements ParseAccordingly<Patients>{
     @Override
